@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { data } from "./Date/Date";
+import Question from "./components/Question";
 
 function App() {
+  const listData = data.map((item, i) => {
+    return (
+      <li key={i}>
+        <Question question={item.question} status={item.status} />
+      </li>
+    );
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <div className="title_block">
+        <div className="title_name">Питання</div>
+        <div className="title_status">Статус питання</div>
+      </div>
+      <div className="questions_block"></div>
+      <div className="question">
+        <ol>{listData}</ol>
+      </div>
     </div>
   );
 }
