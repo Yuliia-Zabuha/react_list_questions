@@ -8,13 +8,13 @@ function Question({ question, status }) {
 
   const questionColor = (e) => {
     if (e.target.id === "radio1") {
-      setColorBg((colorBg = { questionBg: "#FFE4B5" }));
+      setColorBg({ questionBg: "#FFE4B5" });
     }
     if (e.target.id === "radio2") {
-      setColorBg((colorBg = { questionBg: "#00FA9A" }));
+      setColorBg({ questionBg: "#00FA9A" });
     }
     if (e.target.id === "radio3") {
-      setColorBg((colorBg = { questionBg: "#FFA07A" }));
+      setColorBg({ questionBg: "#FFA07A" });
     }
     return colorBg;
   };
